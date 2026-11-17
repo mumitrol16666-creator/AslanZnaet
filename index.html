@@ -1,0 +1,792 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asylan Znaet — обучение 1С и бухгалтерии в Казахстане с нуля</title>
+  <meta name="description" content="Курс по «1С:Бухгалтерия 8 для Казахстана» и бухучёту с нуля: ЭСФ, СНТ, зарплата, формы 200.00, 300.00 и 910.00. Семь модулей за 6–7 недель, практика в учебной базе.">
+  <meta name="theme-color" content="#FFDD00">
+  <meta property="og:title" content="Asylan Znaet — обучение 1С и бухгалтерии в Казахстане">
+  <meta property="og:description" content="Курс по 1С и бухгалтерии с нуля по законодательству Казахстана. Семь модулей за 6–7 недель, практика в учебной базе.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ru_KZ">
+  <!-- после публикации замените на полный адрес картинки: https://ваш-домен/assets/og-image.png -->
+  <meta property="og:image" content="https://mumitrol16666-creator.github.io/AslanZnaet/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body id="top">
+
+<!-- ===== Иконки ===== -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.6l1-5.8L3.5 9.7l5.9-.9z"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c.6-3.2 3-5 6-5s5.400 1.800 6 5"/><circle cx="17" cy="9" r="2.4"/><path d="M16.500 14.200c2.400.2 4 1.700 4.500 4.300"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><rect x="4" y="3.500" width="16" height="17" rx="2"/><path d="M8 8.500h8M8 12h8M8 15.500h5"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.200"/><circle cx="18" cy="6" r="2.200"/><path d="M8.200 18H14a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h5.800"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.600"/><path d="M4.500 20c.8-3.800 3.700-6 7.500-6s6.700 2.200 7.500 6"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.500 12.500V5A1.500 1.500 0 0 1 5 3.500h7.500l8 8a1.500 1.500 0 0 1 0 2.100l-6.400 6.400a1.500 1.500 0 0 1-2.100 0z"/><circle cx="8" cy="8" r="1.400"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.500"/><path d="M9.600 9.500a2.500 2.500 0 1 1 3.600 2.300c-.8.4-1.200 1-1.200 1.900"/><path d="M12 16.600v.1"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.500"/><path d="M16 16l4.500 4.500"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.500l4.500 4.500L19 7.500"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M6 3.500h8l4 4V20a.5.5 0 0 1-.5.5h-11A.5.5 0 0 1 6 20z"/><path d="M14 3.500v4h4M9 12h6M9 15.500h6"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11l8-6.500 8 6.500M6.500 9.500v10h11v-10"/></symbol>
+  <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3.500 9.500L12 4l8.500 5.500M5 10v8M9.700 10v8M14.300 10v8M19 10v8M3.500 20.500h17"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M4 8l8-4.500L20 8v8l-8 4.500L4 16z"/><path d="M4 8l8 4.500L20 8M12 12.500v8"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8.500 16v-4M12.500 16V8M16.500 16v-6"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3.500" y="6" width="17" height="13" rx="2"/><path d="M3.500 10h17M15.500 14.500h2"/></symbol>
+  <symbol id="i-percent" viewBox="0 0 24 24"><path d="M6 18L18 6"/><circle cx="7.500" cy="7.500" r="2.500"/><circle cx="16.500" cy="16.500" r="2.500"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8.500 3.500v3M15.500 3.500v3M9 15l2 2 4-4"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.500"/><path d="M10.200 8.800v6.400l5.200-3.200z"/></symbol>
+  <symbol id="i-cursor" viewBox="0 0 24 24"><path d="M6 4l12.500 6.500-5.400 1.700L11 18z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 6.500A2.500 2.500 0 0 1 6.500 4h11A2.500 2.500 0 0 1 20 6.500v7a2.500 2.500 0 0 1-2.500 2.500H11l-4.500 4v-4A2.500 2.500 0 0 1 4 13.500z"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4M6 4.500h11l-2.200 3.800L17 12H6"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+</svg>
+
+<!-- ===== Шапка: системная панель + панель разделов ===== -->
+<header class="sys" id="sys">
+  <div class="sys__top">
+    <div class="container sys__row">
+      <a class="logo" href="#top" aria-label="Асылан знает — на главную">
+        <img class="logo__img" src="assets/img/logo-mark.webp" width="192" height="208" alt="">
+        <span class="logo__text"><b>Асылан знает<span class="red">.</span></b><small>Школа 1С и&nbsp;бухгалтерии</small></span>
+      </a>
+      <div class="sys__actions">
+        <a class="sys__link" href="#zayavka" data-contact="whatsapp"><svg class="icon"><use href="#i-chat"/></svg>Написать в WhatsApp</a>
+        <a class="btn btn--ink btn--sm" href="#zayavka">Записаться</a>
+      </div>
+    </div>
+  </div>
+  <nav class="sections" aria-label="Разделы сайта">
+    <div class="container sections__row" id="sectionsRow">
+      <a href="#top" data-spy="top" class="is-active"><svg class="icon"><use href="#i-star"/></svg>Главное</a>
+      <a href="#komu" data-spy="komu"><svg class="icon"><use href="#i-users"/></svg>Кому подойдёт</a>
+      <a href="#programma" data-spy="programma"><svg class="icon"><use href="#i-list"/></svg>Программа</a>
+      <a href="#obuchenie" data-spy="obuchenie"><svg class="icon"><use href="#i-route"/></svg>Как учимся</a>
+      <a href="#asylan" data-spy="asylan"><svg class="icon"><use href="#i-user"/></svg>Преподаватель</a>
+      <a href="#formaty" data-spy="formaty"><svg class="icon"><use href="#i-tag"/></svg>Форматы</a>
+      <a href="#faq" data-spy="faq"><svg class="icon"><use href="#i-help"/></svg>Вопросы</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- ===== Первый экран ===== -->
+<section class="hero" data-section="top">
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="chip"><i class="chip__dot"></i>Старт потока <span id="nextStart">25&nbsp;ноября</span> · онлайн</p>
+
+      <div class="ask" aria-hidden="true">
+        <svg class="icon"><use href="#i-search"/></svg>
+        <span class="ask__q"><span id="askText">Почему не сходится ОСВ?</span><i class="ask__caret"></i></span>
+        <span class="ask__ok"><svg class="icon"><use href="#i-check"/></svg></span>
+      </div>
+
+      <h1 class="hero__title">
+        <span class="hero__line">Асылан знает<span class="red">.</span></span>
+        <span class="hero__line"><span class="hl">И научит вас.</span></span>
+      </h1>
+
+      <p class="hero__lead">Курс по&nbsp;1С и&nbsp;бухгалтерии с&nbsp;нуля, по&nbsp;законодательству Казахстана. За&nbsp;6–7&nbsp;недель вы&nbsp;ведёте учёт учебного ТОО в&nbsp;1С и&nbsp;сами закрываете месяц. Асылан проверяет вашу базу и&nbsp;разбирает ошибки.</p>
+
+      <div class="hero__cta">
+        <a class="btn btn--red btn--lg" href="#zayavka">Записаться на обучение <svg class="icon"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--lg" href="#programma">Смотреть программу</a>
+      </div>
+
+      <ul class="hero__facts">
+        <li><span class="tick"><svg class="icon"><use href="#i-check"/></svg></span>С нуля, без опыта</li>
+        <li><span class="tick"><svg class="icon"><use href="#i-check"/></svg></span>Семь модулей практики</li>
+        <li><span class="tick"><svg class="icon"><use href="#i-check"/></svg></span>ЭСФ, СНТ, формы 200.00 и&nbsp;910.00</li>
+        <li><span class="tick"><svg class="icon"><use href="#i-check"/></svg></span>Проверка вашей базы</li>
+      </ul>
+    </div>
+
+    <div class="hero__visual" id="heroVisual">
+      <!-- окно программы позади -->
+      <div class="win" aria-hidden="true">
+        <div class="win__bar"><span class="win__tab">Начальная страница</span><span class="win__tab is-active">Журнал операций</span></div>
+        <div class="win__body">
+          <div class="win__side"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="win__table">
+            <div class="win__row win__row--head"><b></b><b></b><b></b></div>
+            <div class="win__row"><b></b><b></b><b></b></div>
+            <div class="win__row"><b></b><b></b><b></b></div>
+            <div class="win__row is-sel"><b></b><b></b><b></b></div>
+            <div class="win__row"><b></b><b></b><b></b></div>
+            <div class="win__row"><b></b><b></b><b></b></div>
+            <div class="win__row"><b></b><b></b><b></b></div>
+            <div class="win__row"><b></b><b></b><b></b></div>
+            <div class="win__row"><b></b><b></b><b></b></div>
+            <div class="win__row"><b></b><b></b><b></b></div>
+          </div>
+        </div>
+      </div>
+
+      <img class="hero__photo" src="assets/img/asylan-tie.webp" width="864" height="1477" alt="Асылан — преподаватель 1С и бухгалтерии" fetchpriority="high">
+
+      <div class="fcard fcard--doc" aria-hidden="true" style="--depth:1.4">
+        <div class="fcard__bar"><svg class="icon"><use href="#i-doc"/></svg>Реализация ТМЗ и услуг</div>
+        <div class="fcard__body">
+          <span class="mono">№ 000127</span>
+          <span class="status status--ok"><svg class="icon"><use href="#i-check"/></svg>Проведён</span>
+        </div>
+        <div class="fcard__entry mono">Дт 1210 · Кт 6010 <b>560 000 ₸</b></div>
+      </div>
+
+      <div class="fcard fcard--close" aria-hidden="true" style="--depth:2">
+        <div class="fcard__bar"><svg class="icon"><use href="#i-calendar"/></svg>Закрытие месяца</div>
+        <ul class="fcard__list" id="closeList">
+          <li>Амортизация</li>
+          <li>Закрытие счетов</li>
+          <li>Финансовый результат</li>
+        </ul>
+      </div>
+
+      <div class="fcard fcard--osv" aria-hidden="true" style="--depth:.9">
+        <div class="fcard__bar"><svg class="icon"><use href="#i-chart"/></svg>ОСВ за месяц</div>
+        <div class="fcard__body fcard__body--osv">
+          <div><small>Дебет</small><b class="mono" data-count="4850000">4 850 000</b></div>
+          <div><small>Кредит</small><b class="mono" data-count="4850000">4 850 000</b></div>
+          <span class="status status--ok" id="osvOk"><svg class="icon"><use href="#i-check"/></svg>Сходится</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Бегущая строка ===== -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>Банк и касса <i>✦</i> ЭСФ <i>✦</i> СНТ <i>✦</i> Покупки и склад <i>✦</i> Продажи <i>✦</i> Зарплата и кадры <i>✦</i> ИПН · ОПВ · СО · ОСМС <i>✦</i> НДС <i>✦</i> Форма 910.00 <i>✦</i> Форма 200.00 <i>✦</i> Закрытие месяца <i>✦</i> ОСВ <i>✦</i> </span>
+    <span>Банк и касса <i>✦</i> ЭСФ <i>✦</i> СНТ <i>✦</i> Покупки и склад <i>✦</i> Продажи <i>✦</i> Зарплата и кадры <i>✦</i> ИПН · ОПВ · СО · ОСМС <i>✦</i> НДС <i>✦</i> Форма 910.00 <i>✦</i> Форма 200.00 <i>✦</i> Закрытие месяца <i>✦</i> ОСВ <i>✦</i> </span>
+  </div>
+</div>
+
+<!-- ===== Боли: «сообщения программы» ===== -->
+<section class="sec sec--pains">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="crumb"><b>Знакомо?</b></p>
+      <h2>Какое из&nbsp;этих сообщений ваше?</h2>
+    </div>
+
+    <div class="dialogs">
+      <article class="dlg reveal" style="--r:-1.6deg;--d:0ms">
+        <header class="dlg__bar"><span>Ошибка</span><svg class="icon"><use href="#i-x"/></svg></header>
+        <div class="dlg__body"><span class="dlg__ic dlg__ic--err">!</span><p>Открываю 1С и&nbsp;не&nbsp;понимаю, с&nbsp;чего начать и&nbsp;куда нажимать.</p></div>
+        <footer class="dlg__foot"><span class="cbtn cbtn--default">ОК</span></footer>
+      </article>
+      <article class="dlg reveal" style="--r:1.2deg;--d:80ms">
+        <header class="dlg__bar"><span>Предупреждение</span><svg class="icon"><use href="#i-x"/></svg></header>
+        <div class="dlg__body"><span class="dlg__ic dlg__ic--warn">!</span><p>ЭСФ не&nbsp;отправляется, а&nbsp;отгрузка уже сегодня.</p></div>
+        <footer class="dlg__foot"><span class="cbtn cbtn--default">ОК</span></footer>
+      </article>
+      <article class="dlg reveal" style="--r:-.8deg;--d:160ms">
+        <header class="dlg__bar"><span>Ошибка</span><svg class="icon"><use href="#i-x"/></svg></header>
+        <div class="dlg__body"><span class="dlg__ic dlg__ic--err">!</span><p>ОСВ не&nbsp;сходится, а&nbsp;отчёт сдавать завтра.</p></div>
+        <footer class="dlg__foot"><span class="cbtn cbtn--default">ОК</span></footer>
+      </article>
+      <article class="dlg reveal" style="--r:1.4deg;--d:60ms">
+        <header class="dlg__bar"><span>Вопрос</span><svg class="icon"><use href="#i-x"/></svg></header>
+        <div class="dlg__body"><span class="dlg__ic dlg__ic--q">?</span><p>Сертификат курсов есть, а&nbsp;к&nbsp;рабочей базе подойти страшно.</p></div>
+        <footer class="dlg__foot"><span class="cbtn cbtn--default">Да</span><span class="cbtn">Нет</span></footer>
+      </article>
+      <article class="dlg reveal" style="--r:-1.1deg;--d:140ms">
+        <header class="dlg__bar"><span>Предупреждение</span><svg class="icon"><use href="#i-x"/></svg></header>
+        <div class="dlg__body"><span class="dlg__ic dlg__ic--warn">!</span><p>Боюсь ошибиться в&nbsp;налогах и&nbsp;подвести компанию под штраф.</p></div>
+        <footer class="dlg__foot"><span class="cbtn cbtn--default">ОК</span></footer>
+      </article>
+      <article class="dlg reveal" style="--r:.9deg;--d:220ms">
+        <header class="dlg__bar"><span>Вопрос</span><svg class="icon"><use href="#i-x"/></svg></header>
+        <div class="dlg__body"><span class="dlg__ic dlg__ic--q">?</span><p>Бухгалтер ушёл, учёт остался на&nbsp;мне. Что теперь делать?</p></div>
+        <footer class="dlg__foot"><span class="cbtn cbtn--default">ОК</span></footer>
+      </article>
+    </div>
+
+    <div class="bridge reveal">
+      <img class="bridge__photo" src="assets/img/asylan-chair.webp" width="634" height="1355" alt="" loading="lazy">
+      <div class="bridge__text">
+        <p class="bridge__title">Скорее всего, вам никто нормально не&nbsp;объяснил, как устроена 1С.</p>
+        <p>1С&nbsp;— логичная программа: за&nbsp;каждым документом стоят проводки. Когда их&nbsp;видишь, понятно, почему ОСВ сходится или нет.</p>
+      </div>
+      <a class="btn btn--ink" href="#programma">Асылан знает, как <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Кому подойдёт ===== -->
+<section class="sec sec--cream" id="komu" data-section="komu">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="crumb">Раздел 01 <b>Кому подойдёт</b></p>
+      <h2>Четыре случая, когда курс вам подойдёт</h2>
+    </div>
+
+    <div class="who">
+      <article class="who__card reveal" style="--d:0ms">
+        <span class="who__ic"><svg class="icon"><use href="#i-home"/></svg></span>
+        <h3>Новичкам с&nbsp;нуля</h3>
+        <p>Никогда не&nbsp;открывали 1С и&nbsp;не&nbsp;знаете, что такое проводка. Начнём с&nbsp;первого входа в&nbsp;программу и&nbsp;дойдём до&nbsp;закрытия месяца.</p>
+      </article>
+      <article class="who__card reveal" style="--d:80ms">
+        <span class="who__ic"><svg class="icon"><use href="#i-doc"/></svg></span>
+        <h3>Начинающим бухгалтерам</h3>
+        <p>Теорию знаете, а&nbsp;практики в&nbsp;1С не&nbsp;хватает. За&nbsp;курс проведёте операции учебного ТОО своими руками.</p>
+      </article>
+      <article class="who__card reveal" style="--d:160ms">
+        <span class="who__ic"><svg class="icon"><use href="#i-chart"/></svg></span>
+        <h3>ИП и&nbsp;владельцам ТОО</h3>
+        <p>Хотите читать свою ОСВ и&nbsp;проверять бухгалтера. Или вести учёт сами.</p>
+      </article>
+      <article class="who__card reveal" style="--d:240ms">
+        <span class="who__ic"><svg class="icon"><use href="#i-route"/></svg></span>
+        <h3>Тем, кто меняет профессию</h3>
+        <p>Ищете специальность, с&nbsp;которой можно работать удалённо или вести несколько фирм.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Программа: интерактивное окно ===== -->
+<section class="sec" id="programma" data-section="programma">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="crumb">Раздел 02 <b>Программа</b></p>
+      <h2>Что вы&nbsp;делаете в&nbsp;1С за&nbsp;семь модулей</h2>
+      <p class="sec-head__lead">Учимся в&nbsp;«1С:Бухгалтерия 8 для Казахстана», редакция 3.0. Модули названы как разделы программы. В&nbsp;курсе 37&nbsp;коротких видеоуроков: по&nbsp;одному на&nbsp;каждую тему и&nbsp;разбор ошибок в&nbsp;конце модуля. Нажмите на&nbsp;любой модуль и&nbsp;посмотрите темы.</p>
+    </div>
+
+    <div class="app reveal" id="app">
+      <div class="app__bar" aria-hidden="true">
+        <span class="app__dots"><i></i><i></i><i></i></span>
+        <div class="app__tabs">
+          <span class="app__tab">Начальная страница</span>
+          <span class="app__tab is-active">Программа обучения <svg class="icon"><use href="#i-x"/></svg></span>
+        </div>
+      </div>
+
+      <div class="app__body">
+        <div class="app__nav" role="tablist" aria-label="Модули программы">
+          <button role="tab" id="t1" aria-controls="m1" aria-selected="true" class="is-active"><svg class="icon"><use href="#i-home"/></svg><span>Старт в&nbsp;1С</span></button>
+          <button role="tab" id="t2" aria-controls="m2" aria-selected="false" tabindex="-1"><svg class="icon"><use href="#i-bank"/></svg><span>Банк и&nbsp;касса</span></button>
+          <button role="tab" id="t3" aria-controls="m3" aria-selected="false" tabindex="-1"><svg class="icon"><use href="#i-box"/></svg><span>Покупки и&nbsp;склад</span></button>
+          <button role="tab" id="t4" aria-controls="m4" aria-selected="false" tabindex="-1"><svg class="icon"><use href="#i-chart"/></svg><span>Продажи</span></button>
+          <button role="tab" id="t5" aria-controls="m5" aria-selected="false" tabindex="-1"><svg class="icon"><use href="#i-wallet"/></svg><span>Зарплата и&nbsp;кадры</span></button>
+          <button role="tab" id="t6" aria-controls="m6" aria-selected="false" tabindex="-1"><svg class="icon"><use href="#i-percent"/></svg><span>Налоги и&nbsp;отчётность</span></button>
+          <button role="tab" id="t7" aria-controls="m7" aria-selected="false" tabindex="-1"><svg class="icon"><use href="#i-calendar"/></svg><span>Закрытие месяца</span></button>
+        </div>
+
+        <div class="app__main">
+          <section class="mod is-active" role="tabpanel" id="m1" aria-labelledby="t1">
+            <p class="mod__num">Модуль 1</p>
+            <h3>Старт в&nbsp;1С: знакомство с&nbsp;программой</h3>
+            <p class="mod__lead">Знакомитесь с&nbsp;программой и&nbsp;готовите базу к&nbsp;работе.</p>
+            <div class="journal">
+              <div class="journal__head"><span>Тема</span><span>Чему научитесь</span><span>Статус</span></div>
+              <ul>
+                <li><b>Интерфейс и&nbsp;навигация</b><span>Находите нужный документ и&nbsp;отчёт через разделы и&nbsp;поиск</span><i>Освоите</i></li>
+                <li><b>Справочники</b><span>Заводите организацию, контрагентов, номенклатуру и&nbsp;склады</span><i>Освоите</i></li>
+                <li><b>Учётная политика и&nbsp;план счетов</b><span>Настраиваете учёт под ТОО или&nbsp;ИП и&nbsp;разбираетесь в&nbsp;типовом плане счетов</span><i>Освоите</i></li>
+                <li><b>Начальные остатки</b><span>Вводите остатки и&nbsp;проверяете, что баланс сошёлся</span><i>Освоите</i></li>
+              </ul>
+            </div>
+            <p class="mod__result">После модуля у&nbsp;вас настроенная база учебного ТОО с&nbsp;начальными остатками.</p>
+          </section>
+
+          <section class="mod" role="tabpanel" id="m2" aria-labelledby="t2" hidden>
+            <p class="mod__num">Модуль 2</p>
+            <h3>Банк и&nbsp;касса</h3>
+            <p class="mod__lead">Учитесь вести деньги компании так, чтобы остатки совпадали с&nbsp;банком.</p>
+            <div class="journal">
+              <div class="journal__head"><span>Тема</span><span>Чему научитесь</span><span>Статус</span></div>
+              <ul>
+                <li><b>Платёжные поручения</b><span>Создаёте платежи поставщикам и&nbsp;в&nbsp;бюджет</span><i>Освоите</i></li>
+                <li><b>Банковские выписки</b><span>Загружаете выписку и&nbsp;разносите платежи по&nbsp;счетам учёта</span><i>Освоите</i></li>
+                <li><b>Кассовые ордера</b><span>Оформляете приход и&nbsp;расход наличных, ведёте кассовую книгу</span><i>Освоите</i></li>
+                <li><b>Авансовые отчёты</b><span>Выдаёте деньги под отчёт и&nbsp;закрываете подотчётные суммы</span><i>Освоите</i></li>
+              </ul>
+            </div>
+            <p class="mod__result">После модуля остатки по&nbsp;банку и&nbsp;кассе в&nbsp;базе совпадают с&nbsp;выпиской.</p>
+          </section>
+
+          <section class="mod" role="tabpanel" id="m3" aria-labelledby="t3" hidden>
+            <p class="mod__num">Модуль 3</p>
+            <h3>Покупки и&nbsp;склад</h3>
+            <p class="mod__lead">Приходуете товар от&nbsp;поставщика и&nbsp;следите за&nbsp;остатками на&nbsp;складе.</p>
+            <div class="journal">
+              <div class="journal__head"><span>Тема</span><span>Чему научитесь</span><span>Статус</span></div>
+              <ul>
+                <li><b>Поступление ТМЗ и&nbsp;услуг</b><span>Приходуете товары и&nbsp;услуги от&nbsp;поставщиков</span><i>Освоите</i></li>
+                <li><b>Входящие ЭСФ и&nbsp;СНТ</b><span>Принимаете электронные счета-фактуры и&nbsp;накладные, сверяете с&nbsp;поступлением</span><i>Освоите</i></li>
+                <li><b>Склад и&nbsp;виртуальный склад</b><span>Перемещаете и&nbsp;списываете ТМЗ, проводите инвентаризацию</span><i>Освоите</i></li>
+                <li><b>Взаиморасчёты</b><span>Сверяетесь с&nbsp;поставщиками и&nbsp;находите расхождения</span><i>Освоите</i></li>
+              </ul>
+            </div>
+            <p class="mod__result">После модуля остатки на&nbsp;складе в&nbsp;базе сходятся с&nbsp;документами поставщиков.</p>
+          </section>
+
+          <section class="mod" role="tabpanel" id="m4" aria-labelledby="t4" hidden>
+            <p class="mod__num">Модуль 4</p>
+            <h3>Продажи</h3>
+            <p class="mod__lead">Продаёте товар покупателю и&nbsp;отслеживаете оплату.</p>
+            <div class="journal">
+              <div class="journal__head"><span>Тема</span><span>Чему научитесь</span><span>Статус</span></div>
+              <ul>
+                <li><b>Счёт на&nbsp;оплату</b><span>Выставляете счета и&nbsp;отслеживаете оплату покупателей</span><i>Освоите</i></li>
+                <li><b>Реализация ТМЗ и&nbsp;услуг</b><span>Оформляете продажу и&nbsp;разбираете её&nbsp;проводки</span><i>Освоите</i></li>
+                <li><b>ЭСФ и&nbsp;СНТ</b><span>Выписываете электронные счета-фактуры и&nbsp;накладные прямо из&nbsp;1С</span><i>Освоите</i></li>
+                <li><b>Возвраты и&nbsp;исправления</b><span>Исправленные и&nbsp;дополнительные ЭСФ, возвраты от&nbsp;покупателей</span><i>Освоите</i></li>
+              </ul>
+            </div>
+            <p class="mod__result">После модуля вы&nbsp;видите в&nbsp;отчёте, кто из&nbsp;покупателей сколько должен.</p>
+          </section>
+
+          <section class="mod" role="tabpanel" id="m5" aria-labelledby="t5" hidden>
+            <p class="mod__num">Модуль 5</p>
+            <h3>Зарплата и&nbsp;кадры</h3>
+            <p class="mod__lead">Зарплату считаем по&nbsp;шагам: кадровые документы, начисление, налоги, выплата.</p>
+            <div class="journal">
+              <div class="journal__head"><span>Тема</span><span>Чему научитесь</span><span>Статус</span></div>
+              <ul>
+                <li><b>Кадровые документы</b><span>Приём, перевод, отпуск и&nbsp;увольнение сотрудников</span><i>Освоите</i></li>
+                <li><b>Начисление зарплаты</b><span>Считаете оклады, отпускные, больничные и&nbsp;премии</span><i>Освоите</i></li>
+                <li><b>ИПН, ОПВ, СО, ОСМС</b><span>Проверяете, что программа посчитала налоги и&nbsp;взносы верно</span><i>Освоите</i></li>
+                <li><b>Выплата и&nbsp;перечисления</b><span>Формируете ведомости и&nbsp;платёжки по&nbsp;налогам и&nbsp;взносам</span><i>Освоите</i></li>
+              </ul>
+            </div>
+            <p class="mod__result">После модуля зарплата учебного ТОО начислена, налоги и&nbsp;взносы с&nbsp;неё перечислены.</p>
+          </section>
+
+          <section class="mod" role="tabpanel" id="m6" aria-labelledby="t6" hidden>
+            <p class="mod__num">Модуль 6</p>
+            <h3>Налоги и&nbsp;отчётность</h3>
+            <p class="mod__lead">Заполняете налоговые формы по&nbsp;данным своей базы.</p>
+            <div class="journal">
+              <div class="journal__head"><span>Тема</span><span>Чему научитесь</span><span>Статус</span></div>
+              <ul>
+                <li><b>Налоговый учёт в&nbsp;1С</b><span>Понимаете, откуда программа берёт каждую цифру</span><i>Освоите</i></li>
+                <li><b>Форма 200.00</b><span>Декларация по&nbsp;ИПН и&nbsp;социальному налогу: заполняете и&nbsp;проверяете</span><i>Освоите</i></li>
+                <li><b>Формы 300.00 и&nbsp;910.00</b><span>Формируете декларацию по&nbsp;НДС и&nbsp;упрощённую декларацию</span><i>Освоите</i></li>
+                <li><b>Проверка перед сдачей</b><span>Проходите чек-лист и&nbsp;исправляете ошибки до&nbsp;отправки</span><i>Освоите</i></li>
+              </ul>
+            </div>
+            <p class="mod__result">После модуля у&nbsp;вас заполненные формы 200.00, 300.00 и&nbsp;910.00.</p>
+          </section>
+
+          <section class="mod" role="tabpanel" id="m7" aria-labelledby="t7" hidden>
+            <p class="mod__num">Модуль 7</p>
+            <h3>Закрытие месяца</h3>
+            <p class="mod__lead">Закрываете месяц и&nbsp;проверяете себя по&nbsp;ОСВ.</p>
+            <div class="journal">
+              <div class="journal__head"><span>Тема</span><span>Чему научитесь</span><span>Статус</span></div>
+              <ul>
+                <li><b>Регламентные операции</b><span>Запускаете закрытие месяца и&nbsp;разбираете каждую операцию</span><i>Освоите</i></li>
+                <li><b>Основные средства</b><span>Принимаете к&nbsp;учёту и&nbsp;начисляете амортизацию</span><i>Освоите</i></li>
+                <li><b>ОСВ и&nbsp;анализ счетов</b><span>Читаете оборотку и&nbsp;находите, где «не&nbsp;бьётся»</span><i>Освоите</i></li>
+                <li><b>Исправление ошибок</b><span>Исправляете ошибки прошлых периодов по&nbsp;правилам учёта</span><i>Освоите</i></li>
+              </ul>
+            </div>
+            <p class="mod__result">После модуля месяц учебного ТОО закрыт, и&nbsp;вы&nbsp;можете объяснить каждую цифру в&nbsp;ОСВ.</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="app__cmd">
+        <a class="cbtn cbtn--default cbtn--lg" href="#zayavka">Записаться и&nbsp;начать</a>
+        <button class="cbtn cbtn--lg" type="button" id="modNext">Следующий модуль <svg class="icon"><use href="#i-arrow"/></svg></button>
+        <span class="app__status" id="modStatus">Модуль 1 из 7</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Как проходит обучение ===== -->
+<section class="sec sec--ink" id="obuchenie" data-section="obuchenie">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="crumb crumb--dark">Раздел 03 <b>Как учимся</b></p>
+      <h2>Как проходит каждая тема</h2>
+    </div>
+
+    <ol class="steps reveal">
+      <li class="step">
+        <span class="step__num mono">01</span>
+        <span class="step__ic"><svg class="icon"><use href="#i-play"/></svg></span>
+        <h3>Смотрите урок</h3>
+        <p>В&nbsp;каждом видео одна тема, 8–&#8288;12&nbsp;минут. Асылан показывает её&nbsp;на&nbsp;экране 1С.</p>
+      </li>
+      <li class="step">
+        <span class="step__num mono">02</span>
+        <span class="step__ic"><svg class="icon"><use href="#i-cursor"/></svg></span>
+        <h3>Повторяете в&nbsp;базе</h3>
+        <p>К&nbsp;каждому модулю получаете документы учебного ТОО: счета, накладные, выписку. Вводите их&nbsp;в&nbsp;своей базе и&nbsp;сверяете контрольные цифры.</p>
+      </li>
+      <li class="step">
+        <span class="step__num mono">03</span>
+        <span class="step__ic"><svg class="icon"><use href="#i-chat"/></svg></span>
+        <h3>Получаете разбор</h3>
+        <p>Раз в&nbsp;неделю Асылан разбирает базы группы: где ошибка и&nbsp;как найти такую самому.</p>
+      </li>
+      <li class="step">
+        <span class="step__num mono">04</span>
+        <span class="step__ic"><svg class="icon"><use href="#i-flag"/></svg></span>
+        <h3>Закрываете период</h3>
+        <p>Итоговая работа: закрываете месяц учебного ТОО и&nbsp;сдаёте базу на&nbsp;проверку. Ответ приходит письменно, по&nbsp;чек-листу.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===== Преподаватель ===== -->
+<section class="sec" id="asylan" data-section="asylan">
+  <div class="container about">
+    <div class="portrait reveal">
+      <div class="portrait__bar" aria-hidden="true"><span>Преподаватель: Асылан</span><svg class="icon"><use href="#i-x"/></svg></div>
+      <div class="portrait__stage">
+        <img src="assets/img/asylan-smile.webp" width="566" height="1504" alt="Асылан, основатель школы Asylan Znaet" loading="lazy">
+      </div>
+      <span class="stamp" aria-hidden="true">Асылан<br>знает<svg class="icon"><use href="#i-check"/></svg></span>
+    </div>
+
+    <div class="about__text">
+      <div class="sec-head reveal">
+        <p class="crumb">Раздел 04 <b>Преподаватель</b></p>
+        <h2>Привет, я&nbsp;Асылан</h2>
+      </div>
+      <div class="reveal">
+        <p>Я&nbsp;веду этот курс и&nbsp;сам разбираю базы учеников.</p>
+        <p>Показываю тему на&nbsp;экране 1С, вы&nbsp;повторяете её&nbsp;в&nbsp;своей базе. Потом вместе ищем ошибки. Объясняю так, как объяснял бы&nbsp;знакомому.</p>
+      </div>
+      <blockquote class="quote reveal">Если проводки верные, ОСВ сойдётся. Этому и&nbsp;учу.</blockquote>
+      <ul class="principles reveal">
+        <li>Каждую тему вы&nbsp;закрепляете документами в&nbsp;своей базе.</li>
+        <li>Ошибки разбираем раз в&nbsp;неделю на&nbsp;встрече группы.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Результат: «ОСВ навыков» ===== -->
+<section class="sec sec--cream">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="crumb">Отчёт <b>Результат обучения</b></p>
+      <h2>Ваш баланс до&nbsp;и&nbsp;после</h2>
+    </div>
+
+    <div class="osv reveal">
+      <div class="osv__bar">
+        <b>Оборотно-сальдовая ведомость навыков</b>
+        <span>Период: первый урок&nbsp;— итоговая работа</span>
+      </div>
+      <div class="osv__table" role="table" aria-label="Навыки до и после обучения">
+        <div class="osv__row osv__row--head" role="row">
+          <span role="columnheader">Навык</span>
+          <span role="columnheader">Сальдо на&nbsp;начало</span>
+          <span role="columnheader">Сальдо на&nbsp;конец</span>
+        </div>
+        <div class="osv__row" role="row">
+          <b role="cell">Работа в&nbsp;1С</b>
+          <span role="cell" class="osv__before">«Боюсь нажать не&nbsp;туда»</span>
+          <span role="cell" class="osv__after"><svg class="icon"><use href="#i-check"/></svg>Провожу документы без подсказок</span>
+        </div>
+        <div class="osv__row" role="row">
+          <b role="cell">Проводки</b>
+          <span role="cell" class="osv__before">«Дебет, кредит&nbsp;— тёмный лес»</span>
+          <span role="cell" class="osv__after"><svg class="icon"><use href="#i-check"/></svg>Вижу проводки каждого документа</span>
+        </div>
+        <div class="osv__row" role="row">
+          <b role="cell">ЭСФ и&nbsp;СНТ</b>
+          <span role="cell" class="osv__before">«Каждый раз как в&nbsp;первый раз»</span>
+          <span role="cell" class="osv__after"><svg class="icon"><use href="#i-check"/></svg>Выписываю прямо из&nbsp;1С</span>
+        </div>
+        <div class="osv__row" role="row">
+          <b role="cell">Закрытие месяца</b>
+          <span role="cell" class="osv__before">«Не&nbsp;знаю, с&nbsp;чего начать»</span>
+          <span role="cell" class="osv__after"><svg class="icon"><use href="#i-check"/></svg>Закрываю период по&nbsp;чек-листу</span>
+        </div>
+        <div class="osv__row" role="row">
+          <b role="cell">Ошибки в&nbsp;учёте</b>
+          <span role="cell" class="osv__before">«Не&nbsp;сходится, и&nbsp;непонятно где»</span>
+          <span role="cell" class="osv__after"><svg class="icon"><use href="#i-check"/></svg>Нахожу через ОСВ и&nbsp;исправляю</span>
+        </div>
+        <div class="osv__row" role="row">
+          <b role="cell">Отчётность</b>
+          <span role="cell" class="osv__before">«Сдаю и&nbsp;надеюсь на&nbsp;лучшее»</span>
+          <span role="cell" class="osv__after"><svg class="icon"><use href="#i-check"/></svg>Проверяю цифры до&nbsp;отправки ФНО</span>
+        </div>
+        <div class="osv__row osv__row--total" role="row">
+          <b role="cell">Итого</b>
+          <span role="cell">Теория без практики</span>
+          <span role="cell">Закрытый месяц учебного ТОО в&nbsp;вашей базе</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Форматы ===== -->
+<section class="sec" id="formaty" data-section="formaty">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="crumb">Раздел 05 <b>Форматы</b></p>
+      <h2>Выберите, как вам удобнее учиться</h2>
+    </div>
+
+    <div class="plans">
+      <article class="plan plan--hit reveal" style="--d:0ms">
+        <span class="plan__tag">Рекомендуем</span>
+        <h3>В&nbsp;группе</h3>
+        <p class="plan__for">Полный курс с&nbsp;проверкой итоговой работы.</p>
+        <p class="plan__price">99&nbsp;000&nbsp;₸</p>
+        <p class="plan__early"><b>89&nbsp;000&nbsp;₸</b> при полной оплате за&nbsp;7&nbsp;дней до&nbsp;старта</p>
+        <ul>
+          <li>37&nbsp;видеоуроков по&nbsp;семи модулям</li>
+          <li>Учебная база 1С для&nbsp;практики</li>
+          <li>Задания с&nbsp;документами учебного ТОО, конспекты и&nbsp;чек-листы</li>
+          <li>Еженедельные разборы в&nbsp;группе</li>
+          <li>Итоговая работа: сдаёте базу на&nbsp;проверку</li>
+        </ul>
+        <a class="btn btn--red btn--block" href="#zayavka" data-plan="В группе">Записаться</a>
+      </article>
+
+      <article class="plan reveal" style="--d:100ms">
+        <h3>С&nbsp;наставником</h3>
+        <p class="plan__for">Когда нужен личный разбор вашей базы.</p>
+        <p class="plan__price">139&nbsp;000&nbsp;₸</p>
+        <p class="plan__early"><b>129&nbsp;000&nbsp;₸</b> при полной оплате за&nbsp;7&nbsp;дней до&nbsp;старта</p>
+        <ul>
+          <li>Всё из&nbsp;формата «В&nbsp;группе»</li>
+          <li>Личный разбор вашей базы после каждого модуля</li>
+          <li>Проверка исправлений после разбора</li>
+          <li>Ограниченное число мест</li>
+        </ul>
+        <a class="btn btn--block" href="#zayavka" data-plan="С наставником">Записаться</a>
+      </article>
+    </div>
+
+    <p class="plans__note reveal">Скидка 10&nbsp;000&nbsp;₸ действует при полной оплате не&nbsp;позднее чем за&nbsp;7&nbsp;дней до&nbsp;старта потока. Можно платить двумя частями, тогда цена полная.</p>
+    <div class="streams reveal" id="potoki">
+      <div class="streams__bar"><b>Журнал потоков</b><span>В&nbsp;группе 10&nbsp;человек, чтобы Асылан успевал разобрать базу каждого.</span></div>
+      <div class="streams__head" aria-hidden="true"><span>Поток</span><span>Старт</span><span>Ранняя оплата до</span><span>Мест в&nbsp;группе</span><span></span></div>
+      <ul class="streams__list">
+        <li class="stream" data-start="2026-11-25" data-early="2026-11-18" data-label="25 ноября">
+          <b class="stream__n mono">№&nbsp;1</b>
+          <span class="stream__date">25&nbsp;ноября 2026</span>
+          <span class="stream__early">18&nbsp;ноября</span>
+          <span class="stream__seats mono">10</span>
+          <a class="cbtn stream__btn" href="#zayavka" data-stream="25 ноября">Выбрать</a>
+        </li>
+        <li class="stream" data-start="2026-12-07" data-early="2026-11-30" data-label="7 декабря">
+          <b class="stream__n mono">№&nbsp;2</b>
+          <span class="stream__date">7&nbsp;декабря 2026</span>
+          <span class="stream__early">30&nbsp;ноября</span>
+          <span class="stream__seats mono">10</span>
+          <a class="cbtn stream__btn" href="#zayavka" data-stream="7 декабря">Выбрать</a>
+        </li>
+        <li class="stream" data-start="2026-12-20" data-early="2026-12-13" data-label="20 декабря">
+          <b class="stream__n mono">№&nbsp;3</b>
+          <span class="stream__date">20&nbsp;декабря 2026</span>
+          <span class="stream__early">13&nbsp;декабря</span>
+          <span class="stream__seats mono">10</span>
+          <a class="cbtn stream__btn" href="#zayavka" data-stream="20 декабря">Выбрать</a>
+        </li>
+        <li class="stream" data-start="2027-01-10" data-early="2027-01-03" data-label="10 января">
+          <b class="stream__n mono">№&nbsp;4</b>
+          <span class="stream__date">10&nbsp;января 2027</span>
+          <span class="stream__early">3&nbsp;января</span>
+          <span class="stream__seats mono">10</span>
+          <a class="cbtn stream__btn" href="#zayavka" data-stream="10 января">Выбрать</a>
+        </li>
+        <li class="stream" data-start="2027-01-25" data-early="2027-01-18" data-label="25 января">
+          <b class="stream__n mono">№&nbsp;5</b>
+          <span class="stream__date">25&nbsp;января 2027</span>
+          <span class="stream__early">18&nbsp;января</span>
+          <span class="stream__seats mono">10</span>
+          <a class="cbtn stream__btn" href="#zayavka" data-stream="25 января">Выбрать</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Вопросы ===== -->
+<section class="sec sec--cream" id="faq" data-section="faq">
+  <div class="container faq">
+    <div class="sec-head reveal">
+      <p class="crumb">Раздел 06 <b>Вопросы</b></p>
+      <h2>Спрашивают чаще всего</h2>
+      <p class="sec-head__lead">Не&nbsp;нашли свой вопрос? Задайте его в&nbsp;заявке, Асылан ответит в&nbsp;WhatsApp.</p>
+    </div>
+
+    <div class="faq__list reveal">
+      <details open>
+        <summary>Я&nbsp;полный ноль. Справлюсь?</summary>
+        <p>Да. Курс начинается с&nbsp;первого входа в&nbsp;1С и&nbsp;с&nbsp;того, что такое проводка. Специальных знаний не&nbsp;нужно.</p>
+      </details>
+      <details>
+        <summary>По&nbsp;какой программе и&nbsp;законодательству учимся?</summary>
+        <p>Работаем в&nbsp;«1С:Бухгалтерия 8 для Казахстана», редакция 3.0, по&nbsp;действующему законодательству РК. В&nbsp;курсе есть ЭСФ, СНТ, зарплатные налоги и&nbsp;формы 200.00, 300.00, 910.00.</p>
+      </details>
+      <details>
+        <summary>Нужно&nbsp;ли покупать 1С?</summary>
+        <p>Нет. Вы&nbsp;получаете доступ к&nbsp;учебной базе и&nbsp;все задания делаете в&nbsp;ней.</p>
+      </details>
+      <details>
+        <summary>Сколько времени нужно на&nbsp;обучение?</summary>
+        <p>Курс идёт 6–7&nbsp;недель, всего около 40&nbsp;часов. В&nbsp;неделю это 5–6&nbsp;часов: около часа видео, три часа практики в&nbsp;базе и&nbsp;полтора часа разбора с&nbsp;группой. Уроки записаны, смотреть их&nbsp;можно после работы или в&nbsp;выходные.</p>
+      </details>
+      <details>
+        <summary>Что, если у&nbsp;меня не&nbsp;получится задание?</summary>
+        <p>Это обычное дело. В&nbsp;обоих форматах ошибки разбирают: вы&nbsp;увидите, где ошиблись и&nbsp;как находить такое самостоятельно.</p>
+      </details>
+      <details>
+        <summary>Сколько человек в&nbsp;группе?</summary>
+        <p>Десять. Так Асылан каждую неделю успевает разобрать базу каждого ученика. Ближайшие потоки стартуют 25&nbsp;ноября, 7 и&nbsp;20&nbsp;декабря, 10 и&nbsp;25&nbsp;января.</p>
+      </details>
+      <details>
+        <summary>Подойдёт&nbsp;ли обучение ИП или&nbsp;владельцу ТОО?</summary>
+        <p>Да. Вы&nbsp;научитесь читать ОСВ и&nbsp;проверять работу бухгалтера. При желании сможете вести учёт сами.</p>
+      </details>
+      <details>
+        <summary>Можно&nbsp;ли оплатить частями?</summary>
+        <p>Да, двумя равными частями: первая до&nbsp;старта, вторая к&nbsp;середине курса. Цена при этом полная. Скидка 10&nbsp;000&nbsp;₸ действует, если оплатить всю сумму не&nbsp;позднее чем за&nbsp;7&nbsp;дней до&nbsp;старта потока.</p>
+      </details>
+      <details>
+        <summary>Сколько стоит курс и&nbsp;как записаться?</summary>
+        <p>Формат «В&nbsp;группе» стоит 99&nbsp;000&nbsp;₸, «С&nbsp;наставником» 139&nbsp;000&nbsp;₸. При полной оплате за&nbsp;7&nbsp;дней до&nbsp;старта потока цены ниже: 89&nbsp;000 и&nbsp;129&nbsp;000&nbsp;₸. Заполните заявку ниже, она откроется в&nbsp;WhatsApp готовым сообщением. Асылан подтвердит место в&nbsp;выбранном потоке.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Заявка ===== -->
+<section class="sec sec--cta" id="zayavka" data-section="zayavka">
+  <div class="container cta">
+    <div class="cta__copy">
+      <h2 class="reveal">Не&nbsp;знаете, с&nbsp;чего начать? <span class="hl">Асылан знает.</span></h2>
+      <ul class="cta__list reveal">
+        <li><span class="tick"><svg class="icon"><use href="#i-check"/></svg></span>Подтвердит место в&nbsp;выбранном потоке</li>
+        <li><span class="tick"><svg class="icon"><use href="#i-check"/></svg></span>Поможет выбрать формат: в&nbsp;группе или с&nbsp;наставником</li>
+      </ul>
+      <img class="cta__photo" src="assets/img/asylan-think.webp" width="784" height="1318" alt="" loading="lazy">
+    </div>
+
+    <form class="docform reveal" id="leadForm" novalidate>
+      <div class="docform__bar">
+        <b>Заявка на&nbsp;обучение</b>
+        <span class="mono">от <span id="formDate">сегодня</span></span>
+      </div>
+      <div class="docform__body">
+        <label class="field">
+          <span>Имя:</span>
+          <input type="text" name="name" autocomplete="given-name" placeholder="Как к вам обращаться" required>
+          <em class="field__err">Поле «Имя» не заполнено</em>
+        </label>
+        <label class="field" data-crm hidden>
+          <span>Телефон:</span>
+          <input type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="+7 7__ ___ __ __">
+          <em class="field__err">Проверьте номер телефона</em>
+        </label>
+        <label class="field">
+          <span>Формат:</span>
+          <select name="format" id="formatSelect">
+            <option>Пока не&nbsp;знаю, помогите выбрать</option>
+            <option>В группе</option>
+            <option>С наставником</option>
+          </select>
+        </label>
+        <label class="field" id="streamField">
+          <span>Поток:</span>
+          <select name="stream" id="streamSelect">
+            <option value="">Пока не знаю</option>
+            <option value="25 ноября">Поток 1, старт 25 ноября</option>
+            <option value="7 декабря">Поток 2, старт 7 декабря</option>
+            <option value="20 декабря">Поток 3, старт 20 декабря</option>
+            <option value="10 января">Поток 4, старт 10 января</option>
+            <option value="25 января">Поток 5, старт 25 января</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Вопрос:</span>
+          <input type="text" name="question" maxlength="300" placeholder="Необязательно">
+        </label>
+        <label class="check" data-crm hidden>
+          <input type="checkbox" name="consent">
+          <span>Согласен(на) на&nbsp;обработку персональных данных</span>
+          <em class="field__err">Нужно ваше согласие</em>
+        </label>
+      </div>
+      <div class="docform__cmd">
+        <button class="btn btn--red btn--block btn--lg" type="submit"><span id="formBtnText">Написать в&nbsp;WhatsApp</span> <svg class="icon"><use href="#i-arrow"/></svg></button>
+        <p class="docform__note" id="formNote">Откроется WhatsApp с&nbsp;готовым сообщением. Останется нажать «Отправить».</p>
+      </div>
+      <div class="docform__done" id="formDone" hidden>
+        <span class="status status--ok status--lg"><svg class="icon"><use href="#i-check"/></svg>Заявка готова</span>
+        <p id="formDoneText">Открыли WhatsApp с&nbsp;вашим сообщением. Нажмите там «Отправить», и&nbsp;Асылан ответит.</p>
+        <a class="btn btn--red" id="formDoneLink" href="#zayavka" target="_blank" rel="noopener">Открыть WhatsApp ещё раз</a>
+        <button class="docform__back" type="button" id="formBack">Изменить заявку</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== Подвал ===== -->
+<footer class="foot">
+  <div class="container foot__grid">
+    <div>
+      <a class="foot__emblem" href="#top" aria-label="Асылан знает — на главную">
+        <img src="assets/img/emblem-white.webp" width="480" height="477" alt="Асылан знает — школа 1С и бухгалтерии" loading="lazy">
+      </a>
+      <p class="foot__about">Курс по&nbsp;1С и&nbsp;бухгалтерии для Казахстана. Семь модулей с&nbsp;практикой в&nbsp;учебной базе.</p>
+    </div>
+    <nav class="foot__nav" aria-label="Навигация в подвале">
+      <a href="#komu">Кому подойдёт</a>
+      <a href="#programma">Программа</a>
+      <a href="#obuchenie">Как учимся</a>
+      <a href="#asylan">Преподаватель</a>
+      <a href="#formaty">Форматы</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <div class="foot__contacts">
+      <b>Связаться</b>
+      <a href="#zayavka" data-contact="whatsapp">WhatsApp</a>
+      <a href="#zayavka" data-contact="telegram" data-optional>Telegram</a>
+      <a href="#zayavka" data-contact="instagram" data-optional>Instagram</a>
+    </div>
+  </div>
+  <div class="container foot__legal">
+    <span>© <span id="year">2026</span> Asylan Znaet</span>
+    <span>«1С» и&nbsp;«1С:Предприятие»&nbsp;— товарные знаки ООО «1С». Это не&nbsp;официальный сайт фирмы «1С».</span>
+  </div>
+</footer>
+
+<!-- ===== Уведомление в стиле программы ===== -->
+<aside class="toast" id="toast" role="status" aria-live="polite" hidden>
+  <button class="toast__x" type="button" aria-label="Закрыть"><svg class="icon"><use href="#i-x"/></svg></button>
+  <b id="toastTitle">Asylan Znaet</b>
+  <p id="toastText">Не&nbsp;знаете, с&nbsp;чего начать? Оставьте заявку, Асылан поможет выбрать формат.</p>
+  <a href="#zayavka" id="toastLink">Оставить заявку</a>
+</aside>
+
+<!-- ===== Кнопка на телефоне ===== -->
+<a class="mcta" id="mcta" href="#zayavka">Записаться на обучение</a>
+
+<script src="js/config.js" defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>

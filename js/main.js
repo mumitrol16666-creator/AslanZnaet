@@ -196,7 +196,7 @@
         var panel = document.getElementById(tab.getAttribute('aria-controls'));
         if (panel) { panel.hidden = !on; panel.classList.toggle('is-active', on); }
       });
-      if (status) status.textContent = 'Модуль ' + (current + 1) + ' из ' + tabs.length;
+      if (status) status.textContent = (current + 1) + ' из ' + tabs.length + ' модулей';
       var active = tabs[current];
       var nav = active.parentElement;
       if (nav.scrollWidth > nav.clientWidth) {
@@ -263,23 +263,91 @@
     $('.toast__x', toast).addEventListener('click', function () { toast.hidden = true; });
     $('#toastLink').addEventListener('click', function () { toast.hidden = true; });
 
-    // приглашение оставить заявку — один раз за визит, когда человек дочитал до середины
-    var invited = false;
-    try { invited = sessionStorage.getItem('az-invited') === '1'; } catch (e) { /* хранилище недоступно */ }
-    var formSection = $('#zayavka');
-    var onScroll = function () {
-      if (invited) return;
-      var seen = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-      var nearForm = formSection && formSection.getBoundingClientRect().top < window.innerHeight;
-      if (seen > 0.4 && !nearForm) {
-        invited = true;
-        try { sessionStorage.setItem('az-invited', '1'); } catch (e) { /* не страшно */ }
-        toast.hidden = false;
-        window.removeEventListener('scroll', onScroll);
-      }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
   }
+
+  /* ---------- Всплывающее окно с вопросом ---------- */
+  // Показываем один раз за визит: человек дочитал до середины, пробыл на странице 40 секунд
+  // или повёл мышь к закрытию вкладки. Рядом с формой заявки и после её отправки не показываем.
+  (function popup() {
+    var pop = $('#pop');
+    var popForm = $('#popForm');
+    if (!pop || !popForm) return;
+    var shown = false;
+    try { shown = sessionStorage.getItem('az-pop') === '1'; } catch (e) { /* хранилище недоступно */ }
+    var formSection = $('#zayavka');
+    var lastFocus = null;
+    var crm = !!CONFIG.endpoint;
+    if (crm) $('#popBtnText').textContent = 'Перейти к заявке';
+
+    function busy() {
+      var a = document.activeElement;
+      var typing = a && /^(INPUT|SELECT|TEXTAREA)$/.test(a.tagName);
+      var nearForm = formSection && formSection.getBoundingClientRect().top < window.innerHeight * 0.8 &&
+        formSection.getBoundingClientRect().bottom > 0;
+      var sent = $('#formDone') && !$('#formDone').hidden;
+      return typing || nearForm || sent;
+    }
+    function open() {
+      if (shown || busy()) return;
+      shown = true;
+      try { sessionStorage.setItem('az-pop', '1'); } catch (e) { /* не страшно */ }
+      stopWatching();
+      lastFocus = document.activeElement;
+      pop.hidden = false;
+      document.documentElement.classList.add('is-pop-open');
+      popForm.elements.name.focus({ preventScroll: true });
+    }
+    function close() {
+      pop.hidden = true;
+      document.documentElement.classList.remove('is-pop-open');
+      if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+    }
+
+    var onScroll = function () {
+      var seen = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      if (seen > 0.45) open();
+    };
+    var onLeave = function (e) { if (e.clientY <= 0 && !e.relatedTarget) open(); };
+    var timer = setTimeout(open, 40000);
+    function stopWatching() {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', onScroll);
+      document.removeEventListener('mouseout', onLeave);
+    }
+    if (shown) stopWatching();
+    else {
+      window.addEventListener('scroll', onScroll, { passive: true });
+      document.addEventListener('mouseout', onLeave);
+    }
+
+    $$('[data-pop-close]', pop).forEach(function (el) { el.addEventListener('click', close); });
+    document.addEventListener('keydown', function (e) {
+      if (pop.hidden) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'Tab') { // фокус не уходит из окна
+        var items = $$('input, button', popForm);
+        var first = items[0], last = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+    popForm.addEventListener('input', function () { $('.field', popForm).classList.remove('is-invalid'); });
+    popForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var input = popForm.elements.name;
+      var name = input.value.trim();
+      if (name.length < 2) { $('.field', popForm).classList.add('is-invalid'); input.focus(); return; }
+      var mainForm = $('#leadForm');
+      if (mainForm) mainForm.elements.name.value = name;
+      var url = crm ? '' : waLink([
+        'Здравствуйте, Асылан! Меня зовут ' + name + '.',
+        'Хочу узнать про курс по 1С и бухгалтерии: ближайший поток, форматы и рассрочку на 12 месяцев.'
+      ].join('\n'));
+      close();
+      if (url) openInNewTab(url);
+      else if (formSection) formSection.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+    });
+  })();
 
   /* ---------- Кнопка на телефоне ---------- */
   (function mobileCta() {

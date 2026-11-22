@@ -384,6 +384,7 @@
     }
     if (!open.length) {
       $('#potoki').hidden = true;
+      if ($('#nextLeft')) $('#nextLeft').hidden = true;
       if ($('#streamField')) $('#streamField').hidden = true;
       return;
     }
@@ -393,6 +394,17 @@
     $('.stream__date', open[0]).appendChild(tag);
     var next = $('#nextStart');
     if (next) next.textContent = open[0].dataset.label;
+    // сколько мест осталось в ближайшем потоке: число берём из data-left строки потока
+    var leftEl = $('#nextLeft');
+    if (leftEl) {
+      var left = parseInt(open[0].dataset.left, 10);
+      if (left > 0) {
+        var word = left % 10 === 1 && left % 100 !== 11 ? 'место'
+          : (left % 10 >= 2 && left % 10 <= 4 && (left % 100 < 12 || left % 100 > 14) ? 'места' : 'мест');
+        leftEl.textContent = 'осталось ' + left + '\u00a0' + word;
+        leftEl.hidden = false;
+      } else leftEl.hidden = true;
+    }
     $$('[data-stream]').forEach(function (a) {
       a.addEventListener('click', function () { if (select) select.value = a.dataset.stream; });
     });

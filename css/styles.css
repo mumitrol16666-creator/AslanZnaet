@@ -190,6 +190,11 @@ a.cbtn:hover, button.cbtn:hover { filter: brightness(.96); transform: translateY
   font-size: 14px; font-weight: 600;
   background: rgba(255, 255, 255, .6); border: 1.5px solid var(--ink); border-radius: 999px;
 }
+.chip { flex-wrap: wrap; row-gap: 6px; border-radius: 18px; }
+.chip__dot { flex: none; }
+.chip__text { white-space: nowrap; }
+.chip__left { margin-left: 4px; padding: 3px 10px; font-size: .92em; font-weight: 800; color: #fff; background: var(--red); border-radius: 999px; white-space: nowrap; }
+.chip__left[hidden] { display: none; }
 .chip__dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
 
 .ask {
@@ -538,6 +543,7 @@ a.cbtn:hover, button.cbtn:hover { filter: brightness(.96); transform: translateY
 .stream__date { font-weight: 700; }
 .stream__early.is-off { color: var(--muted); }
 .stream__btn { justify-content: center; }
+.stream__left { display: inline-block; padding: 3px 9px; font-size: 13px; font-weight: 800; color: #fff; background: var(--red); border-radius: 999px; white-space: nowrap; }
 .stream__tag { display: inline-block; margin-left: 10px; padding: 2px 9px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: #fff; background: var(--red); border-radius: 999px; vertical-align: 2px; }
 .plan ul { display: grid; gap: 12px; margin: 24px 0 30px; padding-top: 24px; border-top: 2px dashed rgba(27, 27, 27, .25); flex: 1; align-content: start; }
 .plan li { position: relative; padding-left: 30px; font-size: 16px; font-weight: 500; }

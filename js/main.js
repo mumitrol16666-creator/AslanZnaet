@@ -12,10 +12,21 @@
     if (digits.length === 10) digits = '7' + digits;
     return digits.length >= 11 ? digits : '';
   }
+  // Код источника: из ссылки ?k=Р (запоминаем на время визита) или из config.js, по умолчанию «Г».
+  function sourceCode() {
+    var code = '';
+    try {
+      var q = new URLSearchParams(location.search).get('k');
+      if (q && /^[А-ЯЁA-Z0-9]{1,4}$/i.test(q)) { code = q.toUpperCase(); sessionStorage.setItem('az-k', code); }
+      else code = sessionStorage.getItem('az-k') || '';
+    } catch (e) { /* хранилище недоступно */ }
+    return code || String(CONFIG.sourceCode || 'Г');
+  }
   function waLink(text) {
     var num = waNumber();
-    return num ? 'https://wa.me/' + num + '?text=' + encodeURIComponent(text) : '';
+    return num ? 'https://wa.me/' + num + '?text=' + encodeURIComponent(text + '\nКод ' + sourceCode()) : '';
   }
+  function track(name) { if (window.AZ_track) window.AZ_track(name); }
   function openInNewTab(url) {
     var w = window.open(url, '_blank');
     if (w) { try { w.opener = null; } catch (e) { /* не страшно */ } }
@@ -35,7 +46,10 @@
   };
   $$('[data-contact]').forEach(function (a) {
     var url = links[a.dataset.contact];
-    if (url) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; }
+    if (url) {
+      a.href = url; a.target = '_blank'; a.rel = 'noopener';
+      if (a.dataset.contact === 'whatsapp') a.addEventListener('click', function () { track('contact'); });
+    }
     else if (a.hasAttribute('data-optional')) a.hidden = true; // контакт не указан — ссылку не показываем
   });
 
@@ -344,7 +358,7 @@
         'Хочу узнать про курс по 1С и бухгалтерии: ближайший поток, форматы и рассрочку на 12 месяцев.'
       ].join('\n'));
       close();
-      if (url) openInNewTab(url);
+      if (url) { track('lead'); openInNewTab(url); }
       else if (formSection) formSection.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
     });
   })();
@@ -487,6 +501,7 @@
           doneLink.hidden = true;
           back.hidden = true;
           done.hidden = false;
+          track('lead');
         } catch (err) {
           showToast('Заявка не отправлена', 'Не получилось связаться с сервером. Попробуйте ещё раз или напишите нам напрямую.', { autoHide: 8000 });
         }
@@ -511,6 +526,7 @@
 
       doneLink.href = url;
       done.hidden = false;
+      track('lead');
       openInNewTab(url);
     });
   })();

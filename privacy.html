@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Как сайт обрабатывает данные — Asylan Znaet</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#FFDD00">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<main class="container doc">
+  <a class="doc__back" href="index.html">
+    <img src="assets/img/logo-mark.webp" width="192" height="208" alt="">
+    <b>Асылан знает<span class="red">.</span></b>
+  </a>
+
+  <h1>Как сайт обрабатывает данные</h1>
+  <p class="doc__date">Обновлено 22&nbsp;ноября 2026&nbsp;года</p>
+
+  <h2>Заявка</h2>
+  <p>Форма на&nbsp;сайте ничего не&nbsp;сохраняет и&nbsp;сама никуда не&nbsp;отправляет. Кнопка открывает WhatsApp с&nbsp;готовым сообщением: в&nbsp;нём ваше имя, формат, поток и&nbsp;вопрос, если вы его написали. Отправлять сообщение или нет, решаете вы.</p>
+  <p>Если вы его отправили, Асылан видит ваше имя и&nbsp;номер WhatsApp. Заявку он записывает в&nbsp;рабочую таблицу, чтобы ответить и&nbsp;записать вас в&nbsp;поток. Таблица хранится в&nbsp;Google Таблицах, открыть её могут только Асылан и&nbsp;его помощник.</p>
+
+  <h2>Cookie и&nbsp;счётчики</h2>
+  <p>Пока вы не&nbsp;нажали «Согласен», сайт не&nbsp;ставит cookie для аналитики и&nbsp;рекламы. В&nbsp;браузере сохраняется только ваш ответ на&nbsp;вопрос о&nbsp;cookie.</p>
+  <p id="svcLead">После согласия сайт подключает сервисы, которые считают посещения и&nbsp;помогают показывать рекламу тем, кто уже был на&nbsp;сайте:</p>
+  <ul id="svcList">
+    <li data-svc="google">Google Analytics и&nbsp;Google Реклама;</li>
+    <li data-svc="meta">пиксель Meta для рекламы в&nbsp;Instagram и&nbsp;Facebook;</li>
+    <li data-svc="yandex">Яндекс Метрика.</li>
+  </ul>
+  <p id="svcWhat">Они получают адрес страницы, источник перехода, тип устройства и&nbsp;примерный город по&nbsp;IP-адресу. Ещё они узнают, что вы нажали кнопку WhatsApp или отправили заявку, но&nbsp;не&nbsp;получают ваше имя и&nbsp;текст вопроса. Яндекс Метрика записывает, как вы листаете страницу. Поля формы закрыты от&nbsp;этой записи.</p>
+
+  <h2>Как отказаться</h2>
+  <p>Нажмите «Только нужные» в&nbsp;уведомлении внизу страницы. Если передумали, кнопка ниже снова покажет вопрос о&nbsp;cookie. Cookie, которые уже сохранились, можно удалить в&nbsp;настройках браузера.</p>
+  <button class="btn btn--sm" type="button" id="consentReset">Изменить выбор</button>
+
+  <h2>Как удалить заявку</h2>
+  <p>Напишите в&nbsp;WhatsApp <a href="https://wa.me/77078240998" target="_blank" rel="noopener">+7&nbsp;707&nbsp;824&nbsp;09&nbsp;98</a>, что хотите удалить заявку. Асылан удалит её из&nbsp;таблицы и&nbsp;напишет, когда это сделано.</p>
+  <p>Данные обрабатываем по&nbsp;Закону Республики Казахстан «О&nbsp;персональных данных и&nbsp;их&nbsp;защите».</p>
+</main>
+
+<script src="js/config.js" defer></script>
+<script src="js/analytics.js" defer></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var a = window.AZ_analytics;
+    var btn = document.getElementById('consentReset');
+    btn.addEventListener('click', function () { if (a) a.reset(); });
+    // в списке оставляем только подключённые сервисы
+    if (a) {
+      var items = document.querySelectorAll('#svcList [data-svc]');
+      var shown = 0;
+      items.forEach(function (li) { if (!a.configured[li.dataset.svc]) li.hidden = true; else shown++; });
+      if (!shown) {
+        document.getElementById('svcLead').textContent = 'Сейчас на сайте нет счётчиков и рекламных пикселей. Если их подключат, этот раздел обновится, а сайт спросит ваше согласие.';
+        document.getElementById('svcList').hidden = true;
+        document.getElementById('svcWhat').hidden = true;
+        btn.hidden = true;
+      }
+    }
+  });
+</script>
+</body>
+</html>

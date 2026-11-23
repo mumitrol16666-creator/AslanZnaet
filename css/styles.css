@@ -649,6 +649,33 @@ a.cbtn:hover, button.cbtn:hover { filter: brightness(.96); transform: translateY
 .toast__x:hover { background: #F1F1EC; color: var(--ink); }
 
 .mcta { display: none; }
+.foot__legal a { color: inherit; }
+.foot__legal a:hover { color: var(--yellow); }
+
+/* ---------- Уведомление о cookie ---------- */
+.consent {
+  position: fixed; left: 20px; bottom: 20px; z-index: 70;
+  width: min(420px, calc(100vw - 24px)); padding: 16px 18px;
+  font-size: 14.5px; line-height: 1.45;
+  background: #fff; border: 2px solid var(--ink); border-radius: 12px; box-shadow: var(--hard);
+  animation: toastIn .5s var(--ease);
+}
+.consent p { color: var(--ink-2); }
+.consent a { color: var(--ink); font-weight: 600; }
+.consent__btns { display: flex; gap: 10px; margin-top: 12px; }
+
+/* ---------- Страница о данных ---------- */
+.doc { max-width: 760px; padding: 48px 0 96px; }
+.doc__back { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; margin-bottom: 40px; }
+.doc__back img { height: 52px; width: auto; }
+.doc__back b { font-size: 18px; font-weight: 900; letter-spacing: -.03em; }
+.doc h1 { font-size: clamp(30px, 4.2vw, 46px); font-weight: 800; line-height: 1.08; letter-spacing: -.03em; }
+.doc__date { margin-top: 10px; color: var(--muted); font-size: 15px; }
+.doc h2 { margin: 40px 0 12px; font-size: 23px; font-weight: 800; letter-spacing: -.02em; }
+.doc p + p, .doc ul + p { margin-top: 12px; }
+.doc p, .doc li { color: var(--ink-2); }
+.doc ul { margin-top: 12px; padding-left: 22px; list-style: disc; display: grid; gap: 6px; }
+.doc .btn { margin-top: 16px; }
 
 /* ---------- Появление при прокрутке ---------- */
 .js .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s var(--ease) var(--d, 0ms), transform .7s var(--ease) var(--d, 0ms); }
@@ -732,6 +759,7 @@ a.cbtn:hover, button.cbtn:hover { filter: brightness(.96); transform: translateY
   }
   .mcta.is-on { translate: 0 0; }
   .toast { bottom: 84px; right: 12px; }
+  .consent { left: 12px; bottom: 84px; }
 }
 
 @media (max-width: 640px) {

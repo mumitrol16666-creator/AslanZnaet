@@ -53,6 +53,14 @@
     else if (a.hasAttribute('data-optional')) a.hidden = true; // контакт не указан — ссылку не показываем
   });
 
+  // Ссылки с готовым текстом: <a data-wa="текст сообщения">. Без номера WhatsApp ведут к форме заявки.
+  $$('[data-wa]').forEach(function (a) {
+    var url = waLink(a.dataset.wa);
+    if (!url) return;
+    a.href = url; a.target = '_blank'; a.rel = 'noopener';
+    a.addEventListener('click', function () { track('free_lessons'); });
+  });
+
   /* ---------- Даты ---------- */
   var now = new Date();
   var dateEl = $('#formDate');

@@ -74,6 +74,7 @@
   <nav class="sections" aria-label="Разделы сайта">
     <div class="container sections__row" id="sectionsRow">
       <a href="#top" data-spy="top" class="is-active"><svg class="icon"><use href="#i-star"/></svg>Главное</a>
+      <a href="#proba" data-spy="proba"><svg class="icon"><use href="#i-play"/></svg>Попробовать</a>
       <a href="#komu" data-spy="komu"><svg class="icon"><use href="#i-users"/></svg>Кому подойдёт</a>
       <a href="#programma" data-spy="programma"><svg class="icon"><use href="#i-list"/></svg>Программа</a>
       <a href="#obuchenie" data-spy="obuchenie"><svg class="icon"><use href="#i-route"/></svg>Как учимся</a>
@@ -107,7 +108,7 @@
 
       <div class="hero__cta">
         <a class="btn btn--red btn--lg" href="#zayavka">Записаться на обучение <svg class="icon"><use href="#i-arrow"/></svg></a>
-        <a class="btn btn--lg" href="#zayavka" data-wa="Здравствуйте! Хочу бесплатные уроки по 1С.">Пройти 2&nbsp;урока бесплатно</a>
+        <a class="btn btn--lg" href="#proba">Попробовать задание</a>
       </div>
 
       <ul class="hero__facts">
@@ -228,6 +229,50 @@
         <p>1С&nbsp;— логичная программа: за&nbsp;каждым документом стоят проводки. Когда их&nbsp;видишь, понятно, почему ОСВ сходится или нет.</p>
       </div>
       <a class="btn btn--ink" href="#programma">Асылан знает, как <svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Пробное задание: одна операция без регистрации ===== -->
+<section class="sec sec--ink sec--proba" id="proba" data-section="proba">
+  <div class="container proba">
+    <div class="sec-head reveal">
+      <p class="crumb crumb--dark"><b>Попробуйте сами</b></p>
+      <h2>Первое задание будущего бухгалтера</h2>
+      <p class="sec-head__lead">Одна операция учебного ТОО. Выберите ответ и&nbsp;посмотрите, как её&nbsp;разбирает Асылан. Регистрироваться не&nbsp;нужно.</p>
+    </div>
+
+    <div class="proba__grid">
+      <div class="task reveal" id="probaTask">
+        <div class="task__bar"><b>Задание</b><span class="mono">урок 0.2</span></div>
+        <div class="task__body">
+          <p class="task__q">2&nbsp;сентября фирма заплатила поставщику, ТОО «КанцОпт», 928&nbsp;000&nbsp;₸ за&nbsp;бумагу, которую получила в&nbsp;августе. Что стало с&nbsp;деньгами на&nbsp;счёте в&nbsp;банке и&nbsp;с&nbsp;долгом перед поставщиком?</p>
+          <div class="task__opts" role="group" aria-label="Варианты ответа">
+            <button type="button" class="task__opt" data-ans="a"><span class="mono">А</span>Денег стало меньше, долг остался прежним</button>
+            <button type="button" class="task__opt" data-ans="b"><span class="mono">Б</span>Денег стало меньше, и&nbsp;долга стало меньше на&nbsp;928&nbsp;000&nbsp;₸</button>
+            <button type="button" class="task__opt" data-ans="c"><span class="mono">В</span>Денег стало меньше, а&nbsp;долг вырос</button>
+          </div>
+          <div class="task__res" id="probaRes" aria-live="polite" hidden>
+            <p class="task__verdict" id="probaVerdict"></p>
+            <p id="probaText"></p>
+            <button type="button" class="cbtn" id="probaAgain" hidden>Попробовать ещё раз</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="proba__next" id="probaNext" hidden>
+        <figure class="proba__video">
+          <video controls playsinline preload="none" poster="assets/video/proba-0-2.jpg" width="1280" height="720">
+            <source src="assets/video/proba-0-2.mp4" type="video/mp4">
+          </video>
+          <figcaption>Фрагмент урока 0.2, 43&nbsp;секунды. Со&nbsp;звуком.</figcaption>
+        </figure>
+        <p class="proba__lead">Так начинается курс: сначала разбираем операцию на&nbsp;листе, потом проводим её&nbsp;в&nbsp;1С. Первые два урока на&nbsp;платформе бесплатные, практику проверяет Асылан.</p>
+        <div class="proba__cta">
+          <a class="btn btn--red btn--lg" href="#zayavka" data-wa="Здравствуйте! Решил задание на сайте. Хочу пройти 2 бесплатных урока.">Получить 2&nbsp;урока бесплатно <svg class="icon"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--lg" href="#formaty">Программа и&nbsp;цена</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -689,7 +734,11 @@
       </details>
       <details>
         <summary>Можно попробовать до&nbsp;оплаты?</summary>
-        <p>Да. Первые два урока на&nbsp;платформе бесплатные: ролик, практика и&nbsp;тест, как в&nbsp;платном курсе. <a href="#zayavka" data-wa="Здравствуйте! Хочу бесплатные уроки по 1С.">Напишите в&nbsp;WhatsApp</a>, дадим доступ.</p>
+        <p>Да. Начните с&nbsp;<a href="#proba">задания на&nbsp;этой странице</a>, оно без регистрации. Первые два урока на&nbsp;платформе тоже бесплатные: ролик, практика и&nbsp;тест, как в&nbsp;платном курсе. <a href="#zayavka" data-wa="Здравствуйте! Хочу бесплатные уроки по 1С.">Напишите в&nbsp;WhatsApp</a>, дадим доступ.</p>
+      </details>
+      <details>
+        <summary>Будет&nbsp;ли сертификат?</summary>
+        <p>Да, сертификат школы. Он&nbsp;зависит от&nbsp;того, что вы&nbsp;сделали за&nbsp;курс: сданные практики, тесты и&nbsp;итоговая работа. По&nbsp;нему видно, что вы&nbsp;вели учёт учебного ТОО в&nbsp;1С сами.</p>
       </details>
       <details>
         <summary>По&nbsp;какой программе и&nbsp;законодательству учимся?</summary>

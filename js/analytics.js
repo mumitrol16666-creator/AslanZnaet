@@ -62,6 +62,13 @@
   window.AZ_track = function (name) {
     if (!loaded) return;
     try {
+      // Шаги пробного задания: proba_view (задание на экране), proba_answer (выбран ответ), proba_correct.
+      if (/^proba_/.test(name)) {
+        if (window.gtag) window.gtag('event', name);
+        if (window.fbq) window.fbq('trackCustom', name);
+        if (window.ym) window.ym(+ids.ym, 'reachGoal', name);
+        return;
+      }
       if (window.gtag) {
         window.gtag('event', name === 'lead' ? 'generate_lead' : 'contact');
         if (name === 'lead' && ids.adsLead) window.gtag('event', 'conversion', { send_to: ids.adsLead });

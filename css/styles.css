@@ -896,3 +896,47 @@ html.is-pop-open { overflow: hidden; }
   .pop__foot .cbtn { flex: 1 1 100%; justify-content: center; }
 }
 @media (prefers-reduced-motion: reduce) { .pop__shade, .pop__win { animation: none; } }
+
+/* ---------- Пробное задание (#proba) ---------- */
+.sec--proba .sec-head__lead { color: rgba(255, 255, 255, .72); }
+.proba__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: start; }
+.task { background: #fff; color: var(--ink); border: 2px solid var(--ink); border-radius: 14px; box-shadow: 8px 8px 0 var(--yellow); overflow: hidden; }
+.task__bar { display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; font-size: 14px; background: var(--panel); border-bottom: 1px solid var(--line); }
+.task__bar .mono { font-size: 13px; color: var(--muted); }
+.task__body { padding: 22px 22px 24px; }
+.task__q { font-size: 19px; font-weight: 600; line-height: 1.45; }
+.task__opts { display: grid; gap: 10px; margin-top: 20px; }
+.task__opt {
+  display: flex; align-items: flex-start; gap: 12px; width: 100%;
+  padding: 14px 16px; text-align: left; font-size: 16px; line-height: 1.4;
+  background: var(--paper); border: 1.5px solid var(--line-gray); border-radius: 10px;
+  cursor: pointer; transition: border-color .15s, background .15s, transform .15s;
+}
+.task__opt .mono { flex: none; width: 26px; height: 26px; display: grid; place-items: center; font-weight: 700; border: 1.5px solid var(--ink); border-radius: 6px; background: #fff; }
+.task__opt:hover:not(:disabled) { border-color: var(--ink); transform: translateX(3px); }
+.task__opt:disabled { cursor: default; }
+.task__opt.is-right { border-color: var(--green); background: #E7F6EC; }
+.task__opt.is-right .mono { background: var(--green); border-color: var(--green); color: #fff; }
+.task__opt.is-wrong { border-color: var(--red); background: #FDECEC; }
+.task__opt.is-wrong .mono { background: var(--red); border-color: var(--red); color: #fff; }
+.task__res { margin-top: 18px; padding: 16px 18px; border-radius: 10px; background: var(--cream); border: 1px solid var(--line); font-size: 16px; }
+.task__res .cbtn { margin-top: 12px; }
+.task__verdict { font-weight: 800; margin-bottom: 6px; }
+.task__verdict.is-right { color: var(--green); }
+.task__verdict.is-wrong { color: var(--red); }
+.proba__video { margin: 0; }
+.proba__video video { display: block; width: 100%; height: auto; border: 2px solid var(--yellow); border-radius: 12px; background: #000; }
+.proba__video figcaption { margin-top: 8px; font-size: 14px; color: rgba(255, 255, 255, .6); }
+.proba__lead { margin-top: 20px; font-size: 18px; color: rgba(255, 255, 255, .85); }
+.proba__cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 22px; }
+.proba__next:not([hidden]) { animation: probaIn .5s var(--ease); }
+@keyframes probaIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@media (max-width: 900px) {
+  .proba__grid { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 640px) {
+  .task__body { padding: 18px 16px 20px; }
+  .task__q { font-size: 17px; }
+  .proba__cta .btn { width: 100%; justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) { .proba__next:not([hidden]) { animation: none; } }

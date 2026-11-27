@@ -61,6 +61,52 @@
     a.addEventListener('click', function () { track('free_lessons'); });
   });
 
+  /* ---------- Пробное задание (#proba) ---------- */
+  (function proba() {
+    var box = $('#probaTask');
+    if (!box) return;
+    var opts = $$('.task__opt', box);
+    var res = $('#probaRes'), verdict = $('#probaVerdict'), text = $('#probaText');
+    var again = $('#probaAgain'), next = $('#probaNext');
+    var TEXTS = {
+      b: 'Фирма отдала поставщику 928 000 ₸ и больше не должна их ему. Поэтому меняются две строки: денег на счёте в банке меньше, и долг перед «КанцОптом» тоже меньше. Бухгалтер не стоял рядом, когда платили. Об оплате он узнаёт из выписки банка.',
+      a: 'После оплаты фирма больше не должна «КанцОпту» эти 928 000 ₸. Значит, долг тоже изменился.',
+      c: 'Долг перед поставщиком растёт, когда фирма получила товар и ещё не заплатила. Здесь она как раз заплатила.'
+    };
+    var answered = false;
+
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function (es) {
+        if (es[0].isIntersecting) { track('proba_view'); io.disconnect(); }
+      }, { threshold: .5 });
+      io.observe(box);
+    }
+
+    opts.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var ans = btn.dataset.ans, right = ans === 'b';
+        opts.forEach(function (o) { o.disabled = true; });
+        btn.classList.add(right ? 'is-right' : 'is-wrong');
+        verdict.textContent = right ? 'Верно.' : 'Не совсем.';
+        verdict.className = 'task__verdict ' + (right ? 'is-right' : 'is-wrong');
+        text.textContent = TEXTS[ans];
+        again.hidden = right;
+        res.hidden = false;
+        if (!answered) { answered = true; track('proba_answer'); }
+        if (right) {
+          track('proba_correct');
+          next.hidden = false;
+        }
+      });
+    });
+
+    again.addEventListener('click', function () {
+      opts.forEach(function (o) { o.disabled = false; o.classList.remove('is-right', 'is-wrong'); });
+      res.hidden = true;
+      opts[0].focus();
+    });
+  })();
+
   /* ---------- Даты ---------- */
   var now = new Date();
   var dateEl = $('#formDate');
@@ -307,7 +353,13 @@
       var nearForm = formSection && formSection.getBoundingClientRect().top < window.innerHeight * 0.8 &&
         formSection.getBoundingClientRect().bottom > 0;
       var sent = $('#formDone') && !$('#formDone').hidden;
-      return typing || nearForm || sent;
+      // Пока человек решает пробное задание или смотрит ролик к нему, окно не показываем.
+      var proba = $('#proba');
+      var r = proba && proba.getBoundingClientRect();
+      var inProba = r && r.top < window.innerHeight * 0.8 && r.bottom > window.innerHeight * 0.2;
+      var video = $('#probaNext video');
+      var playing = video && !video.paused && !video.ended;
+      return typing || nearForm || sent || inProba || playing;
     }
     function open() {
       if (shown || busy()) return;
